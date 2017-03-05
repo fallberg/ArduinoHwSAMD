@@ -31,6 +31,9 @@
 /** Master clock frequency */
 #define VARIANT_MCK (48000000ul)
 
+/** Board variant */
+#define SENSEBENDER_GW_SAMD_V1
+
 /*----------------------------------------------------------------------------
  *        Headers
  *----------------------------------------------------------------------------*/
@@ -245,6 +248,17 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 #define MY_SWC3 (40ul)
 #define MY_BAT_DETECT (36ul)
 #define MY_SUPPLY_DETECT (37ul)
+
+/*
+ * Onboard EEPROM
+ */
+#define MY_EXT_EEPROM_AT24CS32
+#define MY_EXT_EEPROM_I2C_ADDRESS	(0x50u)
+#define MY_EXT_EEPROM_SIZE			(kbits_512)
+#define MY_EXT_EEPROM_PAGE_SIZE		(32u)
+#define MY_EXT_EEPROM_TWI_CLOCK		(twiClock100kHz)	// can be set to 400kHz with precaution if other i2c devices on bus
+
+ 
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
  *----------------------------------------------------------------------------*/
